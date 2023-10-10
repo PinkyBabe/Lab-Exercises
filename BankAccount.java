@@ -2,6 +2,7 @@ class BankAccount {
     private String name;
     private int age;
     private long acc_num,balance;
+    private long deposit;
     
     public String getName(){
     
@@ -18,6 +19,10 @@ class BankAccount {
     public long getBalance(){
     
         return balance;
+    }
+    public long Deposit(){
+    
+        return deposit;
     }
     
     public void setName(String name){
@@ -42,8 +47,20 @@ class BankAccount {
     
         this.balance = balance;
         System.out.println("Balance: $"+this.balance);
-    
     }
+    
+      public void setDeposit(long deposit){
+        this.deposit = deposit;
+          System.out.println("Deposit: "+this.deposit);
+      }
+      
+      public void Summary(){
+      
+          this.balance = this.balance + this.deposit;
+          
+          System.out.println("Remaining Balance: "+this.balance);
+      
+      }
 }
 
 class Main{
@@ -57,6 +74,8 @@ class Main{
         b.setAge(19);
         b.setAccNum(010101);
         b.setBalance(90000000);
+        b.setDeposit(1000);
+        b.Summary();
         
         System.out.println("-----");
         
@@ -64,6 +83,9 @@ class Main{
         b2.setAge(19);
         b2.setAccNum(203203);
         b2.setBalance(3000067);
+        b2.setDeposit(5000);
+        b2.Summary();
+
     
     }
 }
