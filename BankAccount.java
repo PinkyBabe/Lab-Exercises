@@ -1,8 +1,8 @@
 class BankAccount {
     private String name;
     private int age;
-    private long acc_num,balance;
-    private long deposit;
+    private long acc_num,deposit1,deposit2;
+    private long summary;
     
     public String getName(){
     
@@ -16,13 +16,13 @@ class BankAccount {
     
         return acc_num;
     }
-    public long getBalance(){
+    public long getDeposit1(){
     
-        return balance;
+        return deposit1;
     }
-    public long Deposit(){
+    public long Deposit2(){
     
-        return deposit;
+        return deposit2;
     }
     
     public void setName(String name){
@@ -43,22 +43,22 @@ class BankAccount {
         System.out.println("Account Number: "+this.acc_num);
     
     }
-    public void setBalance(long balance){
+    public void setDeposit1(long deposit1){
     
-        this.balance = balance;
-        System.out.println("Balance: $"+this.balance);
+        this.deposit1 = deposit1;
+        System.out.println("Deposit1: $"+this.deposit1);
     }
     
-      public void setDeposit(long deposit){
-        this.deposit = deposit;
-          System.out.println("Deposit: "+this.deposit);
+      public void setDeposit2(long deposit2){
+        this.deposit2 = deposit2;
+          System.out.println("Deposit2: $"+this.deposit2);
       }
       
-      public void Summary(){
+      public void Balance(){
       
-          this.balance = this.balance + this.deposit;
+          this.summary = this.deposit2 + this.deposit1;
           
-          System.out.println("Remaining Balance: "+this.balance);
+          System.out.println("Remaining Balance: $"+this.summary);
       
       }
 }
@@ -73,19 +73,8 @@ class Main{
         b.setName("Rey Sinabianan");
         b.setAge(19);
         b.setAccNum(010101);
-        b.setBalance(90000000);
-        b.setDeposit(1000);
-        b.Summary();
-        
-        System.out.println("-----");
-        
-        b2.setName("Joash Raut-Raut");
-        b2.setAge(19);
-        b2.setAccNum(203203);
-        b2.setBalance(3000067);
-        b2.setDeposit(5000);
-        b2.Summary();
-
-    
+        b.setDeposit1(1000);
+        b.setDeposit2(1000);
+        b.Balance();
     }
 }
